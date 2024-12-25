@@ -58,7 +58,7 @@ buttonHome.addEventListener('click', function() {
         webname.classList.remove('fade-out');
         subname.classList.remove('fade-out');
         content.classList.remove('fade-out');
-    }, 500); 
+    }, 800); 
 });
 
 // EventListener for projButton
@@ -87,7 +87,7 @@ projButton.addEventListener('click', function() {
         webname.classList.remove('fade-out');
         subname.classList.remove('fade-out');
         content.classList.remove('fade-out');
-    }, 500); 
+    }, 800); 
 });
 
 // EventListener for projButton
@@ -116,7 +116,7 @@ abtButton.addEventListener('click', function() {
         webname.classList.remove('fade-out');
         subname.classList.remove('fade-out');
         content.classList.remove('fade-out');
-    }, 500); 
+    }, 800); 
 });
 
 // EventListener for atButton
@@ -145,7 +145,7 @@ atButton.addEventListener('click', function() {
         webname.classList.remove('fade-out');
         subname.classList.remove('fade-out');
         content.classList.remove('fade-out');
-    }, 500); 
+    }, 800); 
 });
 
 
