@@ -1,21 +1,23 @@
+// Select all navigation link items and the indicator element
 const linkItems = document.querySelectorAll(".link-item");
 const indicator = document.querySelector(".indicator");
 
+// Add click event listeners to each navigation link
 linkItems.forEach((linkItem) => {
     linkItem.addEventListener("click", () => {
-        // Hapus class 'active' dari elemen sebelumnya
+        // Remove the 'active' class from the previously active element
         document.querySelector(".active").classList.remove("active");
-        // Tambahkan class 'active' ke elemen yang diklik
+        // Add the 'active' class to the clicked element
         linkItem.classList.add("active");
 
-        // Atur posisi indikator
+        // Update the indicator's position based on the clicked element
         const offsetLeft = linkItem.offsetLeft;
         const elementWidth = linkItem.offsetWidth;
         indicator.style.left = `${offsetLeft + elementWidth / 2 - indicator.offsetWidth / 2}px`;
     });
 });
 
-// Set posisi awal indikator
+// Set the initial position of the indicator
 const activeLink = document.querySelector(".link-item.active");
 if (activeLink) {
     const offsetLeft = activeLink.offsetLeft;
@@ -23,143 +25,87 @@ if (activeLink) {
     indicator.style.left = `${offsetLeft + elementWidth / 2 - indicator.offsetWidth / 2}px`;
 }
 
-// Define a variabel
+// Select elements for dynamic content updates
 const webname = document.querySelector('.webname');
 const subname = document.querySelector('.subname');
-const content = document.querySelector('.content')
+const content = document.querySelector('.content');
 const buttonHome = document.querySelector('.home');
 const projButton = document.querySelector('.project');
-const abtButton = document.querySelector('.about')
-const atButton = document.querySelector('.attribution')
+const abtButton = document.querySelector('.about');
+const atButton = document.querySelector('.attribution');
 
-// EventListener for buttonHome
-buttonHome.addEventListener('click', function() {
-    console.log("Home button clicked");
+// Animation duration in milliseconds (matches your CSS animation)
+const animationDuration = 500; 
 
-    // Add fade-out class for starting animation
+// Function to handle button click and dynamic content update
+function handleButtonClick(buttonType) {
+    console.log(`${buttonType} button clicked`);
+
+    // Add fade-out class to start the animation
     webname.classList.add('fade-out');
     subname.classList.add('fade-out');
     content.classList.add('fade-out');
 
-    // Set the timeout for changing animation on text
+    // Wait for the animation to finish before updating content
     setTimeout(() => {
-        console.log("Animation done, changing text...");
-       // Fetch the JSON data
-      fetch('js/data.json')
-     .then(response => response.json())
-     .then(data => {
-    // Update the text content with the data from the JSON file
-    webname.innerHTML = data.webname;
-    subname.innerHTML = data.subname1;
-    content.innerHTML = data.content;
-  });
+        // Fetch data from JSON
+        fetch('js/data.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log("Data successfully loaded, updating content...");
 
-        // Delete fade.out class
-        webname.classList.remove('fade-out');
-        subname.classList.remove('fade-out');
-        content.classList.remove('fade-out');
-    }, 950); 
-});
+                // Update content based on the clicked button
+                switch (buttonType) {
+                    case 'home':
+                        webname.innerHTML = data.webname;
+                        subname.innerHTML = data.subname1;
+                        content.innerHTML = data.content;
+                        break;
+                    case 'project':
+                        webname.innerHTML = data.webname;
+                        subname.innerHTML = data.subname2;
+                        content.innerHTML = data.project;
+                        break;
+                    case 'about':
+                        webname.innerHTML = data.webname;
+                        subname.innerHTML = data.subname3;
+                        content.innerHTML = data.introduction;
+                        break;
+                    case 'attribution':
+                        webname.innerHTML = data.webname;
+                        subname.innerHTML = data.subname4;
+                        content.innerHTML = data.attribution;
+                        break;
+                }
 
-// EventListener for projButton
-projButton.addEventListener('click', function() {
-    console.log("Home button clicked");
-
-    // Add fade-out class for starting animation
-    webname.classList.add('fade-out');
-    subname.classList.add('fade-out');
-    content.classList.add('fade-out');
-
-    // Set the timeout for changing animation on text
-    setTimeout(() => {
-        console.log("Animation done, changing text...");
-       // Fetch the JSON data
-      fetch('js/data.json')
-     .then(response => response.json())
-     .then(data => {
-    // Update the text content with the data from the JSON file
-    webname.innerHTML = data.webname;
-    subname.innerHTML = data.subname2;
-    content.innerHTML = data.project;
-  });
-
-        // Delete fade.out class
-        webname.classList.remove('fade-out');
-        subname.classList.remove('fade-out');
-        content.classList.remove('fade-out');
-    }, 1000); 
-});
-
-// EventListener for projButton
-abtButton.addEventListener('click', function() {
-    console.log("Home button clicked");
-
-    // Add fade-out class for starting animation
-    webname.classList.add('fade-out');
-    subname.classList.add('fade-out');
-    content.classList.add('fade-out');
-
-    // Set the timeout for changing animation on text
-    setTimeout(() => {
-        console.log("Animation done, changing text...");
-       // Fetch the JSON data
-      fetch('js/data.json')
-     .then(response => response.json())
-     .then(data => {
-    // Update the text content with the data from the JSON file
-    webname.innerHTML = data.webname;
-    subname.innerHTML = data.subname3;
-    content.innerHTML = data.introduction;
-  });
-
-        // Delete fade.out class
-        webname.classList.remove('fade-out');
-        subname.classList.remove('fade-out');
-        content.classList.remove('fade-out');
-    }, 1000); 
-});
-
-// EventListener for atButton
-atButton.addEventListener('click', function() {
-    console.log("Home button clicked");
-
-    // Add fade-out class for starting animation
-    webname.classList.add('fade-out');
-    subname.classList.add('fade-out');
-    content.classList.add('fade-out');
-
-    // Set the timeout for changing animation on text
-    setTimeout(() => {
-        console.log("Animation done, changing text...");
-       // Fetch the JSON data
-      fetch('js/data.json')
-     .then(response => response.json())
-     .then(data => {
-    // Update the text content with the data from the JSON file
-    webname.innerHTML = data.webname;
-    subname.innerHTML = data.subname4;
-    content.innerHTML = data.attribution;
-  });
-
-        // Delete fade.out class
-        webname.classList.remove('fade-out');
-        subname.classList.remove('fade-out');
-        content.classList.remove('fade-out');
-    }, 1000); 
-});
-
-
-// Function to load data from data.json when index.html loaded
-function loadDefaultData() {
-  fetch('js/data.json') // change the path to your json file location
-    .then(response => response.json())
-    .then(data => {
-      document.querySelector('.webname').innerHTML = data.webname;
-      document.querySelector('.subname').innerHTML = data.subname1;
-      document.querySelector('.content').innerHTML = data.content;
-    });
+                // Remove fade-out class after updating content
+                webname.classList.remove('fade-out');
+                subname.classList.remove('fade-out');
+                content.classList.remove('fade-out');
+                console.log("Animation and content update completed.");
+            })
+            .catch(error => {
+                console.error("Error loading data:", error);
+            });
+    }, animationDuration); // Delay matches the animation duration
 }
 
-// Call a function to load data
+// Add event listeners for navigation buttons
+buttonHome.addEventListener('click', () => handleButtonClick('home'));
+projButton.addEventListener('click', () => handleButtonClick('project'));
+abtButton.addEventListener('click', () => handleButtonClick('about'));
+atButton.addEventListener('click', () => handleButtonClick('attribution'));
+
+// Function to load default data on page load
+function loadDefaultData() {
+    fetch('js/data.json') // Change the path to your JSON file location
+        .then(response => response.json())
+        .then(data => {
+            webname.innerHTML = data.webname;
+            subname.innerHTML = data.subname1;
+            content.innerHTML = data.content;
+        });
+}
+
+// Load default data when the page is loaded
 window.onload = loadDefaultData;
-  
