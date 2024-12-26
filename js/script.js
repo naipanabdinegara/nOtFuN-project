@@ -34,7 +34,7 @@ const atButton = document.querySelector('.attribution')
 
 // EventListener for buttonHome
 buttonHome.addEventListener('click', function() {
-    console.log("Tombol Home diklik");
+    console.log("Home button clicked");
 
     // Add fade-out class for starting animation
     webname.classList.add('fade-out');
@@ -43,7 +43,7 @@ buttonHome.addEventListener('click', function() {
 
     // Set the timeout for changing animation on text
     setTimeout(() => {
-        console.log("Animasi selesai, mengganti teks...");
+        console.log("Animation done, changing text...");
        // Fetch the JSON data
       fetch('js/data.json')
      .then(response => response.json())
@@ -51,7 +51,7 @@ buttonHome.addEventListener('click', function() {
     // Update the text content with the data from the JSON file
     webname.innerHTML = data.webname;
     subname.innerHTML = data.subname1;
-    content.innerHTML = data.content1;
+    content.innerHTML = data.content;
   });
 
         // Delete fade.out class
@@ -63,7 +63,7 @@ buttonHome.addEventListener('click', function() {
 
 // EventListener for projButton
 projButton.addEventListener('click', function() {
-    console.log("Tombol Home diklik");
+    console.log("Home button clicked");
 
     // Add fade-out class for starting animation
     webname.classList.add('fade-out');
@@ -72,7 +72,7 @@ projButton.addEventListener('click', function() {
 
     // Set the timeout for changing animation on text
     setTimeout(() => {
-        console.log("Animasi selesai, mengganti teks...");
+        console.log("Animation done, changing text...");
        // Fetch the JSON data
       fetch('js/data.json')
      .then(response => response.json())
@@ -92,7 +92,7 @@ projButton.addEventListener('click', function() {
 
 // EventListener for projButton
 abtButton.addEventListener('click', function() {
-    console.log("Tombol Home diklik");
+    console.log("Home button clicked");
 
     // Add fade-out class for starting animation
     webname.classList.add('fade-out');
@@ -101,7 +101,7 @@ abtButton.addEventListener('click', function() {
 
     // Set the timeout for changing animation on text
     setTimeout(() => {
-        console.log("Animasi selesai, mengganti teks...");
+        console.log("Animation done, changing text...");
        // Fetch the JSON data
       fetch('js/data.json')
      .then(response => response.json())
@@ -121,7 +121,7 @@ abtButton.addEventListener('click', function() {
 
 // EventListener for atButton
 atButton.addEventListener('click', function() {
-    console.log("Tombol Home diklik");
+    console.log("Home button clicked");
 
     // Add fade-out class for starting animation
     webname.classList.add('fade-out');
@@ -130,7 +130,7 @@ atButton.addEventListener('click', function() {
 
     // Set the timeout for changing animation on text
     setTimeout(() => {
-        console.log("Animasi selesai, mengganti teks...");
+        console.log("Animation done, changing text...");
        // Fetch the JSON data
       fetch('js/data.json')
      .then(response => response.json())
