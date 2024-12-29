@@ -1,44 +1,64 @@
-### Introduction
-Welcome! This documentation will guide you through editing this template. This template is designed to be easy to edit, even for novice users.
+# nOtFuN  
 
-### File Structure
-* **path/js/data.json:** This file contains all the data used by the website, such as the website name, the title of each session, and its content.
+**nOtFuN** is a project providing a simple, fast, and clean UI template for websites with a modern and minimalist color scheme. If you're looking for a fully customizable and efficient solution, nOtFuN is the right choice.  
 
-### Editing the Website Name
-To change the website name, open the `data.json` file and edit the value of the `webname` property.
+> **Note:**  
+nOtFuN is **not** a template for WordPress or similar platforms. If you need a simpler GUI-based interface, we strongly recommend using WordPress. nOtFuN is designed for developers who want full control over the look and functionality of their websites.  
 
-### Managing Sessions
-* **Default Sessions:** By default, this website has 4 sessions: Home, Project, About Me, and Attribution.
-* **Changing Session Titles:** Each session has a `subname` property that is used to display the session title. For example, `subname1` is the title for the first session (Home).
-* **Editing Session Content:** The content of each session is stored in a property that corresponds to its name. For example:
-* **Home Session:** Edit the `content` property.
-* **Project Session:** Edit the `project` property.
-* **About Me Session:** Edit the `introduction` property.
-* **Attribution Session:** Edit the `attribution` property.
+## Project Status  
 
-### Adding HTML Elements
-You can add HTML elements (e.g., `<p>`, `<img>`, `<div>`) directly into the session content to enhance the appearance of your website.
+This project is currently under active development. In future updates, we plan to introduce more customization options to meet a variety of user needs.  
 
-### Further Customization
-If you have knowledge of HTML, CSS, and JavaScript, you can further customize the appearance and functionality of this website. For example, you can:
-* Create a new session.
-* Change the overall appearance of the website by editing the CSS file.
-* Add interactive features using JavaScript.
+---
 
-### Conclusion
-By following this guide, you can easily edit and customize this website to your liking. Good luck!
+## Features  
 
-**Tips:**
-* Use a text editor such as Visual Studio Code or Sublime Text to make editing JSON files easier.
-* If you have any difficulties, feel free to search for tutorials or additional documentation on HTML, CSS, and JavaScript.
+- **Flexible Structure**  
+  All configurations are stored in the `conf.yaml` file, allowing you to easily manage the content and layout of your site.  
 
-**Example data.json Structure:**
-```json
-{
-"webname": "My Website",
-"subname1": "Home",
-"content": "<p>Welcome to my website!</p>",
-"subname2": "Projects",
-"project": "This is a list of my projects...",
-// ... and so on
-}
+- **Minimalist & Modern**  
+  A clean color scheme of white (`#FFF`) and modern blue (`#4070F4`) provides a calming and aesthetic experience.  
+
+- **High Efficiency**  
+  Built with a focus on speed and simplicity, making it ideal for small to medium-scale projects.  
+
+---
+
+## Documentation  
+
+### Understanding the Website Structure  
+
+The `conf.yaml` file is the core of this project. It holds all the necessary information to render content on each page of your site. This file is designed to be easily understandable, even for beginners in programming.  
+
+#### Key Elements in `conf.yaml`:  
+- **`webname`**: The main title of your website, displayed in the top of the page.
+- **`subname1`, `subname2`, ...**: Titles for each session or page of your site.  
+- **`content`, `project`, `introduction`, `attribution`**: Columns that store actual content for each section, supporting text, arrays, and objects for more complex data structures.  
+
+### Further Customization  
+- **Formatting Text**: Use HTML tags and CSS to style text and other elements.  
+- **Adding Images**: Use the `<img>` tag to insert images into your pages, ensuring the image path is correct.  
+- **Creating Links**: Use the `<a>` tag to create links to other pages or external websites.  
+- **Forms**: Add contact or registration forms using the `<form>` tag.  
+
+### Additional Tips  
+1. **Validate Syntax**  
+   Ensure the `conf.yaml` file has correct syntax. You can use an online YAML validator to check.  
+2. **Backup**  
+   Always create a backup of `conf.yaml` before making major changes.  
+3. **Learn Basic HTML, CSS, and JavaScript**  
+   Understanding these basics allows you to build more dynamic and interactive websites.  
+
+---
+
+## Conclusion  
+
+nOtFuN gives you full flexibility to create a website that fits your needs. By understanding the structure of the `conf.yaml` file and leveraging HTML and CSS features, you can design a unique and appealing website. Don’t hesitate to experiment and try new things!  
+
+---  
+
+**Contributions:**  
+We welcome contributions from the community. If you have ideas or suggestions, feel free to submit them via [Issues](https://github.com/username/nOtFuN/issues).  
+
+**License:**  
+This project is licensed under the [MIT License](LICENSE).
