@@ -13,7 +13,6 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     background: #4070F4;
     overflow-x: hidden;
@@ -34,22 +33,22 @@ body {
 }
 
 .subname {
-    position: absolute;
-    top: 70px;
-    left: 20px;
+    margin-top: 80px; /* Jarak dari elemen sebelumnya */
     padding: 10px 15px;
     color: #FFF;
+    text-align: center;
     transition: opacity 0.5s ease-in-out;
-    font-size: 24px;
 }
 
 /* Content */
 .content {
-    margin-top: 150px;
+    margin-top: 20px; /* Jarak dari .subname */
     width: 100%;
     max-width: 1200px;
     padding: 20px;
     color: #FFF;
+    background: rgba(255, 255, 255, 0.1); /* Styling opsional */
+    border-radius: 8px; /* Sudut melengkung */
     overflow-y: auto;
     transition: opacity 0.5s ease-in-out;
     padding-bottom: 100px;
@@ -130,50 +129,3 @@ nav {
     border-radius: 2px;
     transition: all 0.3s ease-in-out;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav {
-        height: 70px;
-    }
-
-    .link-item {
-        width: 70px;
-    }
-
-    .link-icon {
-        font-size: 26px;
-    }
-
-    .link-text {
-        font-size: 10px;
-    }
-    .subname {
-        font-size: 24px;
-        padding: 10px 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    nav {
-        height: 60px;
-    }
-
-    .link-item {
-        width: 60px;
-    }
-
-    .link-icon {
-        font-size: 22px;
-    }
-
-    .link-text {
-        display: none;
-    }
-}
-
-@media (min-width: 1024px) {
-    .subname {
-        font-size: 34px;
-        padding: 20px 25px;
-  }
