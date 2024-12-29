@@ -35,7 +35,7 @@ const abtButton = document.querySelector('.about');
 const atButton = document.querySelector('.attribution');
 
 // Animation duration in milliseconds (matches your CSS animation)
-const animationDuration = 500; 
+const animationDuration = 500;
 
 // Function to handle button click and dynamic content update
 function handleButtonClick(buttonType) {
@@ -48,10 +48,12 @@ function handleButtonClick(buttonType) {
 
     // Wait for the animation to finish before updating content
     setTimeout(() => {
-        // Fetch data from JSON
-        fetch('js/data.json')
-            .then(response => response.json())
-            .then(data => {
+        // Fetch data from YAML file
+        fetch('js/conf.yaml') // Update the path to your YAML file location
+            .then(response => response.text())
+            .then(yamlText => {
+                // Parse YAML to JavaScript object
+                const data = jsyaml.load(yamlText);
                 console.log("Data successfully loaded, updating content...");
 
                 // Update content based on the clicked button
@@ -85,7 +87,7 @@ function handleButtonClick(buttonType) {
                 console.log("Animation and content update completed.");
             })
             .catch(error => {
-                console.error("Error loading data:", error);
+                console.error("Error while loading data:", error);
             });
     }, animationDuration); // Delay matches the animation duration
 }
@@ -98,12 +100,17 @@ atButton.addEventListener('click', () => handleButtonClick('attribution'));
 
 // Function to load default data on page load
 function loadDefaultData() {
-    fetch('js/data.json') // Change the path to your JSON file location
-        .then(response => response.json())
-        .then(data => {
+    fetch('js/conf.yaml') // Update the path to your YAML file location
+        .then(response => response.text())
+        .then(yamlText => {
+            // Parse YAML to JavaScript object
+            const data = jsyaml.load(yamlText);
             webname.innerHTML = data.webname;
             subname.innerHTML = data.subname1;
             content.innerHTML = data.content;
+        })
+        .catch(error => {
+            console.error("Error loading data:", error);
         });
 }
 
